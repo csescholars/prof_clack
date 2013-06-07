@@ -9,7 +9,7 @@ PURPOSE: general style
 /* CSS Document */
 body {
 
-	background-color: #EEEEEE;
+	background-color: #FFFC00;
 	font-family: "Segoe UI","Helvetica",Garuda,Arial,sans-serif;
 	font-size: 14px;
     padding-bottom: 40px;
@@ -32,13 +32,55 @@ body {
 	padding: 20px;
 }
 
-footer {
-
-	padding: 10px;
-}
-
 .btn-primary {
 
 	background-color: #00A8D9;
 	background-image: linear-gradient(to bottom, #00A8D9, #0068D9);
+}
+
+.header_title {
+
+	margin-left: -50px;
+
+	color: #FFFFFF;
+	background-color: #01219B;
+
+	padding: 5px;
+	padding-left: 65px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+
+	margin-bottom: 0px;
+	width: auto;
+	display: table;
+
+-webkit-box-shadow: 10px 6px 4px rgba(0, 0, 0, 0.5);
+   -moz-box-shadow: 10px 6px 4px rgba(0, 0, 0, 0.5);
+        box-shadow: 10px 6px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header_diag {
+
+	left: -50px;
+    width: 150px; 
+    height: 40px;
+    margin-left: 25px;
+    margin-bottom: -40px; 
+
+    position: relative;
+    z-index: -1;
+    -webkit-transform: skew(50deg); 
+    -moz-transform: skew(50deg); 
+    -o-transform: skew(50deg); 
+    background: #091447;
+}
+
+.header_diag + p {
+
+	padding-top: 15px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 15px;
+	font-size: 18px;
+	line-height: 35px;
 }

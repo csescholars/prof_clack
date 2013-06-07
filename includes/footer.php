@@ -1,3 +1,4 @@
-<p class="pull-right"><a href="#">Back to top</a></p>
-<p>&copy; 2013 GVSU Pre-Dental Club &middot; <a href="#">Constitution</a> &middot; <a href="#">Contact Us</a></p>
-  
+<div class="footer">
+	<p class="pull-right"><a href="#">Back to top</a></p>
+	<p>&copy; 2013 Dr. Herek Clack &middot; <a href="members.php">Contact</a></p>
+</div>  

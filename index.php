@@ -75,18 +75,20 @@
       margin-bottom: 60px;
       width: 1000px;
       margin: 0 auto;
-      box-shadow: 0 0 30px rgba(0,0,0,.25);
     }
 
     .carousel .container {
       position: relative;
+      padding: 0px;
       z-index: 9;
     }
 
     .carousel-control {
+
+      top: 80%;
       height: 80px;
       margin-top: 0;
-      font-size: 120px;
+      font-size: 150px;
       text-shadow: 0 1px 1px rgba(0,0,0,.4);
       background-color: transparent;
       border: 0;
@@ -100,20 +102,16 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 70%;
+      width: 62%;
       height: 500px;
     }
 
     .carousel-caption {
-      background-color: rgba(34, 34, 34, 0.5);;
-
-      -webkit-border-radius: 12px;
-        border-radius: 12px;
-
-
+      background-color: rgba(0, 0, 0);
       background-clip: padding-box;
       position: static;
       width: 30%;
+      height: 500px;
       /*padding: 0 20 20px;*/
     }
     .carousel-caption h1,
@@ -192,19 +190,6 @@
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
         <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
       </div><!-- /.carousel -->
-    
-      <div class='container real_body'>
-        <div class='main_content' id='main_content'>
-        </div>
-      </div>
-
-      <div id="data" class="cushycms">
-        title1, this is the message for title1, link_title, http://www.google.com;
-        title2, this is the message for title2;
-        title3, this is the message for title3;
-        title4, this is getting older;
-        title5, this is the last one;
-      </div>
 
       <!-- FOOTER -->
 <?php
@@ -226,7 +211,6 @@
         $('#myCarousel').carousel({
             interval: 4000
         });
-        fill_headers(getDataAndParse('data')); 
       })
     </script>
   </body>
