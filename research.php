@@ -70,7 +70,6 @@
           <div class="modal-body">
             <form class="research_form" method="post">
               Title: &nbsp;&nbsp;&nbsp;<input class="input-taller" type="text" name="title"><br />
-              Image: <input type="file" class="input-taller" type="text" name="image"><br />
               <br />
               <textarea class="ckeditor" type="text" name="paragraph" cols="80" rows="15"></textarea>
             </form>
@@ -80,20 +79,30 @@
           <button class="btn btn-primary research_submit">Submit</button> 
           </div>
         </div>
-        <div class="article" table-id="1">
-          <h1 class="header_title">
-            title
+
+<?php
+    $row['title'] = 'example title';
+    $row['content'] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et blandit tortor. Aliquam rutrum nisl pulvinar orci mattis, ac sodales lorem consectetur. Nulla facilisi. Aliquam vitae sapien nisi. Phasellus volutpat lectus vitae ornare scelerisque. Mauris eu quam ante. Donec vel tellus mi. Ut mattis tempus luctus. Nunc in nisl vitae turpis consectetur ornare eu nec sapien. Pellentesque ac odio leo. Etiam eleifend adipiscing ultrices. Sed facilisis imperdiet libero, a viverra lectus bibendum auctor. Curabitur sit amet nisl vitae nisi malesuada porttitor vitae vel nibh. ';
+
+  //for
+    echo " 
+        <div class='article' table-id='1'> 
+          <h1 class='header_title'> 
+    ";
+    echo $row['title'];
+    echo "
           </h1>
-          <div class="header_diag">
+          <div class='header_diag'>
           </div>
           <p>
-            content
+    ";
+    echo $row['content'];
+    echo "
           </p>
         </div>
-        <p class='info'>
-          The GVSU Pre-Dental club aims to help students in their pursuit of becoming a dentist with bi-weekly meetings geared toward improving the likelihood of acceptance into dental school. Along with meetings, the Pre-Dental club executive board plans outside events to enlighten pre-dental students’ with regards to all aspects of dentistry. (Our yearly trip to the University of Michigan’s Dental School in the spring is one such event.) Another highlight of being a member of the Pre-Dental club is the opportunity to meet and establish relationships with admission representatives from dental schools located in the state of Michigan and beyond.
-        </p>
-        <img class='about_img' src="images/uofm_visit.jpg" />
+    ";
+
+?>
       </div>
 
 
