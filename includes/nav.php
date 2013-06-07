@@ -1,6 +1,6 @@
 <div class='entire_nav_bar'>
   <div class='title'>
-    <a href='index.html'>
+    <a href='index.php'>
       <h1>
         Clack Website
       </h1>
@@ -8,11 +8,11 @@
   </div>
   <div class='nav_bar'>
     <div class='tabs'>
-      <a href='about.html'><span class="tab_item about">People</span></a>
-      <a href='join.html'><span class="tab_item join selected">Research</span></a>
-      <a href='calendar.html'><span class="tab_item calendar">Publications</span></a>
-      <a href='members.html'><span class="tab_item members">Photos</span></a>
-      <a href='connect.html'><span class="tab_item connect">Links</span></a>
+      <a href='people.php'><span class="tab_item people">People</span></a>
+      <a href='research.php'><span class="tab_item research">Research</span></a>
+      <a href='publications.php'><span class="tab_item publications">Publications</span></a>
+      <a href='photos.php'><span class="tab_item photos">Photos</span></a>
+      <a href='links.php'><span class="tab_item links">Links</span></a>
     </div>
   </div>
 </div>
@@ -20,7 +20,4 @@
 </div>
 <div class="nav_diag">
 </div>
-<br />
-<br />
-<br />
 <br />

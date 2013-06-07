@@ -102,10 +102,9 @@ Blue shading
 
 .entire_nav_bar {
 		height: 60px;
-		background: white;
--webkit-box-shadow: 0 6px 4px rgb(0, 0, 0, 0.5);
-   -moz-box-shadow: 0 6px 4px rgb(0, 0, 0, 0.5);
-        box-shadow: 0 6px 4px rgb(0, 0, 0, 0.5);
+-webkit-box-shadow: 0 6px 4px rgba(0, 0, 0, 0.5);
+   -moz-box-shadow: 0 6px 4px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 6px 4px rgba(0, 0, 0, 0.5);
 }
 
 .selected {
@@ -129,4 +128,12 @@ Blue shading
 
 	color: #B6E8FF;
 	text-decoration: none;
+}
+
+.footer {
+
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
