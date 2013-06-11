@@ -68,7 +68,7 @@
             <h3 id="myModalLabel">Add Article</h3>
           </div>
           <div class="modal-body">
-            <form class="research_form" method="post" action="php/add_research.php">
+            <form class="research_form" method="post" action="db_access/add_research.php">
               Title: &nbsp;&nbsp;&nbsp;<input class="input-taller" type="text" name="title"><br />
               <br />
               <textarea class="ckeditor" type="text" name="paragraph" cols="80" rows="15"></textarea>

@@ -8,7 +8,7 @@ if ($db->connect_error) {
 }
 
 $stmt = $db->prepare("INSERT INTO research VALUES (?, NULL, ?)");
-$stmt->bind_param('sb', $title, $paragraph);
+$stmt->bind_param('ss', $title, $paragraph);
 
 $title = $_POST['title'];
 $paragraph = $_POST['paragraph'];
