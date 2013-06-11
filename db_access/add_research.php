@@ -1,6 +1,6 @@
 <?php
 
-$db = new mysqli('localhost', 'clack', 'password', 'clacktastic');
+$db = new mysqli('localhost', 'root', '', 'clacktastic');
 
 /* check connection */
 if ($db->connect_error) {

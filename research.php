@@ -1,11 +1,16 @@
+<!DOCTYPE html>
 <?php
 
-  if (isset($_POST['title']) && isset($_POST['paragraph'])) {
+  if (isset($_POST['add']) && isset($_POST['title']) && isset($_POST['paragraph'])) {
 
     require_once('db_access/add_research.php');
   }
+
+  if (isset($_POST['delete']) && isset($_POST['title'])) {
+
+    require_once('db_access/rm_research.php');
+  }
 ?>
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -75,7 +80,8 @@
             <h3 id="myModalLabel">Add Article</h3>
           </div>
           <div class="modal-body">
-            <form class="research_form" method="post" action="db_access/add_research.php">
+            <form class="research_form" method="post">
+              <input type="hidden" name="add" value="true" />
               Title: &nbsp;&nbsp;&nbsp;<input class="input-taller" type="text" name="title"><br />
               <br />
               <textarea class="ckeditor" type="text" name="paragraph" cols="80" rows="15"></textarea>
@@ -96,9 +102,8 @@
 
     echo " 
         <div class='article icon_holder' table-id='1'>
-          <a href='#'><span class='floating_icon edit_icon'></span></a> 
-          <a href='#'><span class='floating_icon edit_icon'></span></a>
-          <div class='clear_float_right'></div> 
+          <a href='#' class='edit_research'><span class='floating_icon_first edit_icon'></span></a> 
+          <a href='#' class='delete_research'><span class='floating_icon_second delete_icon'></span></a>
           <h1 class='header_title'> 
     ";
     echo $row['title'];
@@ -133,13 +138,44 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="ckeditor/ckeditor.js"></script>
     <script>
+      function post_to_url(path, params) {
+          method = "post"; // Set method to post by default if not specified.
+
+          // The rest of this code assumes you are not using a library.
+          // It can be made less wordy if you use one.
+          var form = document.createElement("form");
+          form.setAttribute("method", method);
+          form.setAttribute("action", path);
+
+          for(var key in params) {
+              if(params.hasOwnProperty(key)) {
+                  var hiddenField = document.createElement("input");
+                  hiddenField.setAttribute("type", "hidden");
+                  hiddenField.setAttribute("name", key);
+                  hiddenField.setAttribute("value", params[key]);
+
+                  form.appendChild(hiddenField);
+               }
+          }
+          document.body.appendChild(form);
+          form.submit();
+      }
+
       $(function(){
           //set selected
           $(".research").addClass("selected");
           $(".research_submit").click(function() {
             $(".research_form").submit();
+          });
+
+          $(".delete_research").click(function() {
+
+//            var title = $(this).next('.header_title').html().trim();
+            var title = 'test';
+            alert("posting title"+title);
+            post_to_url(window.location.href, {'delete':'true', 'title':title});
           });                      
-      })
+      });
     </script>
   </body>
 </html>

@@ -90,12 +90,30 @@ body {
 	position: relative;
 }
 
-.floating_icon {
+.floating_icon_second {
 
   display: inline-block;
   position: absolute;
-  float: right;
-  top: 25px;
+  right: 25px;
+  top: 22px;
+  width: 35px;
+  height: 35px;
+  margin-top: 1px;
+  *margin-right: .3em;
+  line-height: 35px;
+  vertical-align: text-top;
+  /*background-position: 14px 14px;*/
+  background-size: 35px, 35px;
+  background-repeat: no-repeat;
+  background-image: url("../images/edit.png");
+}
+
+.floating_icon_first {
+
+  display: inline-block;
+  position: absolute;
+  right: 60px;
+  top: 22px;
   width: 35px;
   height: 35px;
   margin-top: 1px;
@@ -123,12 +141,7 @@ body {
 	background-image: url("../images/delete.png");
 }
 
-.delete_pressed_icon {
+.delete_icon:hover {
 
 	background-image: url("../images/delete_pressed.png");
-}
-
-.clear_float_right {
-
-	clear: right;
 }

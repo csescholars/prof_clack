@@ -1,5 +1,5 @@
 <?php
-$db = new mysqli('localhost', 'clack', 'password', 'clacktastic');
+$db = new mysqli('localhost', 'root', '', 'clacktastic');
 
 /* check connection */
 if ($db->connect_error) {
@@ -7,7 +7,7 @@ if ($db->connect_error) {
 	exit();
 }
 
-$stmt = $db->prepare("DELETE * FROM research WHERE title=?");
+$stmt = $db->prepare("DELETE FROM research WHERE title=?");
 $stmt->bind_param('s', $title);
 
 $title = $_POST['title'];
