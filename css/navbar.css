@@ -29,7 +29,7 @@ Blue shading
 
 /*--------------------------------------------------*/
 
-.title {
+.entire_nav_bar .title {
 
 	margin-left: -50px;
 	float: left;
@@ -38,18 +38,18 @@ Blue shading
 	background-color: #01219B;
 }
 
-.title h1 {
+.entire_nav_bar .title h1 {
 
 	text-align: center;
 }
 
-.nav_bar {
+.entire_nav_bar .nav_bar {
 
 	float: left;
 	width: 66%;
 }
 
-.tabs {
+.entire_nav_bar .tabs {
 
 	background-color: #FFFFFF;
 /*
@@ -61,7 +61,7 @@ Blue shading
 	position: relative;
 }
 
-.tab_item {
+.entire_nav_bar .tab_item {
 
 	display: block;
 	float: left;
@@ -75,7 +75,7 @@ Blue shading
 	cursor: pointer;
 }
 
-.nav_bar_finish {
+.entire_nav_bar .nav_bar_finish {
 
 	clear: left;
 }
@@ -96,7 +96,7 @@ Blue shading
     background: #091447;
 }
 
-.tab_item:hover {
+.entire_nav_bar .tab_item:hover {
 	color: #0638FF;
 }
 
@@ -107,24 +107,24 @@ Blue shading
         box-shadow: 0 6px 4px rgba(0, 0, 0, 0.5);
 }
 
-.selected {
+.entire_nav_bar .selected {
 
 	font-weight: bold;
 	color: #0638FF;
 }
 
-.nav_bar a {
+.entire_nav_bar .nav_bar a {
 
 	text-decoration: none;
 }
 
-.title a {
+.entire_nav_bar .title a {
 
 	color: #FFFFFF;
 	text-decoration: none;
 }
 
-.title a:hover {
+.entire_nav_bar .title a:hover {
 
 	color: #B6E8FF;
 	text-decoration: none;

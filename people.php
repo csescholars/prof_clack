@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>GVSU Pre-Dental Club</title>
+    <title>People</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -49,9 +49,6 @@
       overflow: hidden;
       width: 100px;
       height: 100px;
-      -webkit-border-radius: 100px;
-      -moz-border-radius: 100px;
-      border-radius: 100px;
 
       transform: translate(-50px, 0px);
       -ms-transform: translate(-50px, 0px); /* IE 9 */
@@ -119,205 +116,95 @@
 
       <!-- NAVBAR
       ================================================== -->
-      <div class='navbar'>
-        <div class='header'>
-          <div class='image'>
-            <img src="images/gvsu_predental_logo_trans.png">
-          </div>
-          <div class='title'>
-            <h1>
-              GVSU Pre-Dental Club
-            </h1>
-          </div>
-          <br />
-          <div class='title_description'>
-            Association for Grand Valley State University students interested in pursuing a career in dentistry.
-          </div> 
-        </div>
-        <div class='tabs'>
-          <a href='index.html'><span class="tab_item home">Home</span></a>
-          <a href='about.html'><span class="tab_item about">About</span></a>
-          <a href='join.html'><span class="tab_item join">Join</span></a>
-          <a href='calendar.html'><span class="tab_item calendar">Calendar</span></a>
-          <a href='members.html'><span class="tab_item members">Members</span></a>
-          <a href='connect.html'><span class="tab_item connect">Connect</span></a>
-        </div>
-      </div>
+<?php
+  include('includes/nav.php');
+?>
 
       <div>
         <div class='info'>
           <table class='officer'>
             <tr>
               <td class='title' rowspan='2'>
-                Vice President
+                <b style="visibility:hidden">asdf</b> Faculty
               </td>
               <td>
-                <img class='profile cushycms' src="images/officers/pj.jpg">
+                <img class='profile cushycms' src="images/officers/clack.jpg">
               </td>
             </tr>
             <tr>
               <td class='description cushycms'>
-                Patricia Drake
+                Dr. Herek Clack
                 <br />
-                Bio-medical major
+                Engineering 1, Room 252D
                 <br />
-                Class 2015
+                (312) 567 3184
               </td>
             </tr>
           </table>
           <table class='officer'>
             <tr>
               <td class='title' rowspan='2'>
-                Vice President
+                PhD student
               </td>
               <td>
-                <img class='profile cushycms' src="images/officers/pj.jpg">
+                <img class='profile cushycms' src="images/officers/Solomon.jpg">
               </td>
             </tr>
             <tr>
               <td class='description cushycms'>
-                Patricia Drake
+                Ubong Solomon
                 <br />
-                Bio-medical major
+                Engineering 1, Room 260
                 <br />
-                Class 2015
+                (773) 876 3402
               </td>
             </tr>
           </table>
           <table class='officer'>
             <tr>
               <td class='title' rowspan='2'>
-                Vice President
+                PhD student
               </td>
               <td>
-                <img class='profile cushycms' src="images/officers/pj.jpg">
+                <img class='profile cushycms' src="images/officers/lee.jpg">
               </td>
             </tr>
             <tr>
               <td class='description cushycms'>
-                Patricia Drake
+                Eric Monsu Lee
                 <br />
-                Bio-medical major
+                Engineering 1, Room 260
                 <br />
-                Class 2015
+                (312) 567 6903
               </td>
             </tr>
           </table>
-          <table class='officer'>
-            <tr>
-              <td class='title' rowspan='2'>
-                Vice President
-              </td>
-              <td>
-                <img class='profile cushycms' src="images/officers/pj.jpg">
-              </td>
-            </tr>
-            <tr>
-              <td class='description cushycms'>
-                Patricia Drake
-                <br />
-                Bio-medical major
-                <br />
-                Class 2015
-              </td>
-            </tr>
-          </table>
-<table class='officer'>
-            <tr>
-              <td class='title' rowspan='2'>
-                Vice President
-              </td>
-              <td>
-                <img class='profile cushycms' src="images/officers/pj.jpg">
-              </td>
-            </tr>
-            <tr>
-              <td class='description cushycms'>
-                Patricia Drake
-                <br />
-                Bio-medical major
-                <br />
-                Class 2015
-              </td>
-            </tr>
-          </table>
-          <table class='officer'>
-            <tr>
-              <td class='title' rowspan='2'>
-                Vice President
-              </td>
-              <td>
-                <img class='profile cushycms' src="images/officers/pj.jpg">
-              </td>
-            </tr>
-            <tr>
-              <td class='description cushycms'>
-                Patricia Drake
-                <br />
-                Bio-medical major
-                <br />
-                Class 2015
-              </td>
-            </tr>
-          </table>
-<table class='officer'>
-            <tr>
-              <td class='title' rowspan='2'>
-                Vice President
-              </td>
-              <td>
-                <img class='profile cushycms' src="images/officers/pj.jpg">
-              </td>
-            </tr>
-            <tr>
-              <td class='description cushycms'>
-                Patricia Drake
-                <br />
-                Bio-medical major
-                <br />
-                Class 2015
-              </td>
-            </tr>
-          </table>
-          <table class='officer'>
-            <tr>
-              <td class='title' rowspan='2'>
-                Vice President
-              </td>
-              <td>
-                <img class='profile cushycms' src="images/officers/pj.jpg">
-              </td>
-            </tr>
-            <tr>
-              <td class='description cushycms'>
-                Patricia Drake
-                <br />
-                Bio-medical major
-                <br />
-                Class 2015
-              </td>
-            </tr>
-          </table>
-
         </div>
         <br />
         <div id="member_table">
         </div>
         <div id="data" class="cushycms">
-          Name, Uniqname, Team, Status, Class;
-          Jeff, jsallans, Tech Team, Core, Junior;
-          Harsha, hgotur, Tech Team, Talent, Sophomore; 
-          Praful, 12, 2, 3, 2; 
-          Jason, 4, 2, 3, 2; 
-          Ryan, 2, 2, 3, 2; 
-          Matt, mlripper, Tech Team, Talent, Junior
+          Former members, Contact, Link;
+          Dr. Kavin Ammigan,  ,  ;
+          Nekheel Gajjar, , ;
+          Dr. Tae-Hoon Jung, , ; 
+          Dr. Martin Linck [Post-doc], , ; 
+          A. A. Mohammed, , ; 
+          Uttam Narasimhan, , ; 
+          Peter Richard Bittner, , ; 
+          Pierre Coutris, , ; 
+          Violaine Todoroff, , ; 
+          Vinit Prabhu, , ; 
+          Brian Robbins, , ; 
+          Taehoon Kim, , ;
         </div>
       </div>
 
 
       <!-- FOOTER -->
-      <footer>
-      </footer>
+<?php
+  include('includes/footer.php');
+?>
 
     </div><!-- /.container -->
 
@@ -334,16 +221,8 @@
     </script>
     <script>
       $(function(){
-          //load navbar
-          $(".navbar").load("includes/nav.html", function() {
-
-            //set selected
-            $(".members").addClass("selected");            
-          }); 
-
-          //load footer
-          $("footer").load("includes/footer.html"); 
-          
+          //set selected
+          $(".people").addClass("selected");            
       })
     </script>
   </body>

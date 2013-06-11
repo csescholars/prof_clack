@@ -59,7 +59,7 @@
 
       <div>
         <!-- Button to trigger modal -->
-        <a href="#myModal" role="button" class="btn" data-toggle="modal">Add Article</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#myModal" role="button" class="btn" data-toggle="modal">Add Article</a>
          
         <!-- Modal -->
         <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
