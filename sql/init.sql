@@ -1,11 +1,11 @@
-CREATE DATABASE IF NOT EXISTS clack;
+CREATE DATABASE IF NOT EXISTS clacktastic;
 
-USE clack;
+USE clacktastic;
 
 CREATE TABLE IF NOT EXISTS research
 (
 	title VARCHAR(200),
-	link VARCHAR(200),
-	paragraph TEXT(1024),
+	image BLOB,
+	paragraph TEXT,
 	PRIMARY KEY (title)
 );
