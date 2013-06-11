@@ -10,6 +10,9 @@
 
     require_once('db_access/rm_research.php');
   }
+
+  require_once('db_access/get_research.php');
+
 ?>
 <html lang="en">
   <head>
@@ -94,28 +97,29 @@
         </div>
 
 <?php
-    $variable[0]['title'] = 'example title';
-    $variable[0]['paragraph'] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et blandit tortor. Aliquam rutrum nisl pulvinar orci mattis, ac sodales lorem consectetur. Nulla facilisi. Aliquam vitae sapien nisi. Phasellus volutpat lectus vitae ornare scelerisque. Mauris eu quam ante. Donec vel tellus mi. Ut mattis tempus luctus. Nunc in nisl vitae turpis consectetur ornare eu nec sapien. Pellentesque ac odio leo. Etiam eleifend adipiscing ultrices. Sed facilisis imperdiet libero, a viverra lectus bibendum auctor. Curabitur sit amet nisl vitae nisi malesuada porttitor vitae vel nibh. ';
+
+    //result is the result of research returned from require_once("get_research.php")
+//    $row[0] = 'example title';
+//    $row[2] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et blandit tortor. Aliquam rutrum nisl pulvinar orci mattis, ac sodales lorem consectetur. Nulla facilisi. Aliquam vitae sapien nisi. Phasellus volutpat lectus vitae ornare scelerisque. Mauris eu quam ante. Donec vel tellus mi. Ut mattis tempus luctus. Nunc in nisl vitae turpis consectetur ornare eu nec sapien. Pellentesque ac odio leo. Etiam eleifend adipiscing ultrices. Sed facilisis imperdiet libero, a viverra lectus bibendum auctor. Curabitur sit amet nisl vitae nisi malesuada porttitor vitae vel nibh. ';
 
   //for
-  foreach ($variable as $row) {
+  while ($row = $result->fetch_row()) {
 
     echo " 
         <div class='article icon_holder' table-id='1'>
-          <a href='#' class='edit_research'><span class='floating_icon_first edit_icon'></span></a> 
-          <a href='#' class='delete_research'><span class='floating_icon_second delete_icon'></span></a>
+          <a class='edit_research'><span class='floating_icon_first edit_icon'></span></a> 
+          <a class='delete_research'><span class='floating_icon_second delete_icon'></span></a>
           <h1 class='header_title'> 
     ";
-    echo $row['title'];
+    echo $row[0];
     echo "
           </h1>
           <div class='header_diag'>
           </div>
-          <p>
     ";
-    echo $row['paragraph'];
+    //expects $row[2] to start with <p>
+    echo $row[2];
     echo "
-          </p>
         </div>
     ";
   }
@@ -170,9 +174,7 @@
 
           $(".delete_research").click(function() {
 
-//            var title = $(this).next('.header_title').html().trim();
-            var title = 'test';
-            alert("posting title"+title);
+            var title = $(this).next('.header_title').html().trim();
             post_to_url(window.location.href, {'delete':'true', 'title':title});
           });                      
       });
