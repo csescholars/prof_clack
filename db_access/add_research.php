@@ -1,4 +1,5 @@
 <?php
+
 $db = new mysqli('localhost', 'clack', 'password', 'clacktastic');
 
 /* check connection */

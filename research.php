@@ -1,3 +1,10 @@
+<?php
+
+  if (isset($_POST['title']) && isset($_POST['paragraph'])) {
+
+    require_once('db_access/add_research.php');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -81,12 +88,17 @@
         </div>
 
 <?php
-    $row['title'] = 'example title';
-    $row['content'] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et blandit tortor. Aliquam rutrum nisl pulvinar orci mattis, ac sodales lorem consectetur. Nulla facilisi. Aliquam vitae sapien nisi. Phasellus volutpat lectus vitae ornare scelerisque. Mauris eu quam ante. Donec vel tellus mi. Ut mattis tempus luctus. Nunc in nisl vitae turpis consectetur ornare eu nec sapien. Pellentesque ac odio leo. Etiam eleifend adipiscing ultrices. Sed facilisis imperdiet libero, a viverra lectus bibendum auctor. Curabitur sit amet nisl vitae nisi malesuada porttitor vitae vel nibh. ';
+    $variable[0]['title'] = 'example title';
+    $variable[0]['paragraph'] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et blandit tortor. Aliquam rutrum nisl pulvinar orci mattis, ac sodales lorem consectetur. Nulla facilisi. Aliquam vitae sapien nisi. Phasellus volutpat lectus vitae ornare scelerisque. Mauris eu quam ante. Donec vel tellus mi. Ut mattis tempus luctus. Nunc in nisl vitae turpis consectetur ornare eu nec sapien. Pellentesque ac odio leo. Etiam eleifend adipiscing ultrices. Sed facilisis imperdiet libero, a viverra lectus bibendum auctor. Curabitur sit amet nisl vitae nisi malesuada porttitor vitae vel nibh. ';
 
   //for
+  foreach ($variable as $row) {
+
     echo " 
-        <div class='article' table-id='1'> 
+        <div class='article icon_holder' table-id='1'>
+          <a href='#'><span class='floating_icon edit_icon'></span></a> 
+          <a href='#'><span class='floating_icon edit_icon'></span></a>
+          <div class='clear_float_right'></div> 
           <h1 class='header_title'> 
     ";
     echo $row['title'];
@@ -96,11 +108,12 @@
           </div>
           <p>
     ";
-    echo $row['content'];
+    echo $row['paragraph'];
     echo "
           </p>
         </div>
     ";
+  }
 
 ?>
       </div>
