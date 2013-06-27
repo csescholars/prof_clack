@@ -184,7 +184,6 @@
             var title = $(this).nextAll('.header_title').first().html().trim();
             var body = $(this).nextAll('.research_paragraph').first().html().trim();
             var image = $(this).prevAll('.research_image').first().attr('src');
-            alert(title+":"+body+":"+image);
             $('#myModal').modal('show');
             $('#add').val(false);
             $('#edit').val(title);
