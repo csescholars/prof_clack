@@ -75,7 +75,7 @@ body {
     background: #091447;
 }
 
-.header_diag + p {
+.header_diag + p, .header_diag + ol {
 
 	padding-top: 15px;
 	padding-left: 30px;
@@ -126,6 +126,24 @@ body {
   background-image: url("../images/edit.png");
 }
 
+.publication_icon_size {
+
+  top: 0px;
+  right: 10px;
+  background-size: 20px, 20px;
+  line-height: 20px;
+  height: 20px;
+}
+
+.publication_second_icon_size {
+
+  top: 0px;
+  right: -20px;
+  background-size: 20px, 20px;
+  line-height: 20px;
+  height: 20px;
+}
+
 .edit_icon {
 
 	background-image: url("../images/edit.png");
@@ -144,4 +162,49 @@ body {
 .delete_icon:hover {
 
 	background-image: url("../images/delete_pressed.png");
+}
+
+.large_lines {
+
+  padding: 60px;
+  font-size: 30px;
+  line-height: 130px;
+}
+
+.people_frame {
+
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  vertical-align: middle;
+  transform: translate(-50px, 0px);
+  -ms-transform: translate(-50px, 0px); /* IE 9 */
+  -webkit-transform: translate(-50px, 0px); /* Safari and Chrome */
+  -moz-transform: translate(-50px, 0px); /* Firefox */
+  -o-transform: translate(-50px, 0px); /* Opera */
+}
+
+.people_img {
+
+  width: 120px;
+  position: relative;
+}
+
+.link_frame {
+
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.link_img {
+
+  width: 150px;
+  position: relative;
+}
+
+.link_text {
+
+  padding-left: 30px;
 }

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <?php
 
-  if (isset($_POST['add']) && isset($_POST['title']) && isset($_POST['paragraph'])) {
+  if (isset($_POST['add']) && isset($_POST['reference'])) {
 
-    require_once('db_access/add_research.php');
+//    require_once('db_access/add_publication.php');
   }
 
-  if (isset($_POST['delete']) && isset($_POST['title'])) {
+  if (isset($_POST['delete']) && isset($_POST['reference'])) {
 
-    require_once('db_access/rm_research.php');
+//    require_once('db_access/rm_publication.php');
   }
 
-  require_once('db_access/get_research.php');
+//  require_once('db_access/get_publication.php');
 
 ?>
 <html lang="en">
@@ -32,6 +32,18 @@
     /* GLOBAL STYLES
     -------------------------------------------------- */
     /* Padding below the footer and lighter body text */
+    .info {
+
+      padding: 30px;
+      font-size: 18px;
+      line-height: 35px;
+    }
+
+    .about_img {
+
+      width: 1000px;
+
+    }
 
     </style>
 
@@ -62,20 +74,30 @@
 
       <div>
         <!-- Button to trigger modal -->
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#myModal" role="button" class="btn" data-toggle="modal">Add Article</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#myModal" role="button" class="btn" data-toggle="modal">Add Link</a>
          
         <!-- Modal -->
         <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel">Add Article</h3>
+            <h3 id="myModalLabel">Add Link</h3>
           </div>
           <div class="modal-body">
             <form class="research_form" method="post">
-              <input type="hidden" name="add" value="true" />
-              Title: &nbsp;&nbsp;&nbsp;<input class="input-taller" type="text" name="title"><br />
-              <br />
-              <textarea class="ckeditor" type="text" name="paragraph" cols="80" rows="15"></textarea>
+              <table>
+                <tr>
+                  <td>Org name:</td>
+                  <td><input type="text" name="org"></td>
+                </tr>
+                <tr>
+                  <td>Org web page:</td>
+                  <td><input type="text" name="link"></td>
+                </tr>
+                <tr>
+                  <td>Org image:</td>
+                  <td><input type="file" name="img"></td>
+                </tr>
+              </table>
             </form>
           </div>
           <div class="modal-footer">
@@ -87,31 +109,43 @@
 <?php
 
     //result is the result of research returned from require_once("get_research.php")
-//    $row[0] = 'example title';
-//    $row[2] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et blandit tortor. Aliquam rutrum nisl pulvinar orci mattis, ac sodales lorem consectetur. Nulla facilisi. Aliquam vitae sapien nisi. Phasellus volutpat lectus vitae ornare scelerisque. Mauris eu quam ante. Donec vel tellus mi. Ut mattis tempus luctus. Nunc in nisl vitae turpis consectetur ornare eu nec sapien. Pellentesque ac odio leo. Etiam eleifend adipiscing ultrices. Sed facilisis imperdiet libero, a viverra lectus bibendum auctor. Curabitur sit amet nisl vitae nisi malesuada porttitor vitae vel nibh. ';
+    $row[0]['org'] = 'American Association for Aerosol Research';
+    $row[0]['link'] = 'http://www.google.com';
+    $row[0]['img'] = 'images/officers/Solomon.jpg';
 
-  //for
-  while ($row = $result->fetch_row()) {
+    $row[1]['org'] = 'Institute for Liquid Atomization and Spray Systems';
+    $row[1]['link'] = 'http://www.google.com';
+    $row[1]['img'] = 'images/officers/Clack.jpg';
 
     echo " 
-        <div class='article icon_holder' table-id='1'>
-          <a class='edit_research'><span class='floating_icon_first edit_icon'></span></a> 
-          <a class='delete_research'><span class='floating_icon_second delete_icon'></span></a>
-          <h3 class='header_title'> 
+        <div class='large_lines'>
     ";
-    echo $row[0];
-    echo "
-          </h3>
-          <div class='header_diag'>
-          </div>
-    ";
-    //expects $row[2] to start with <p>
-    echo $row[2];
+    
+    //  while ($row = $result->fetch_row()) {
+    foreach ($row as $item) {
+
+      echo "<div class='icon_holder'>
+              <a class='edit_research'><span class='floating_icon_first edit_icon'></span></a> 
+              <a class='delete_research'><span class='floating_icon_second delete_icon'></span></a>
+                <table><tr>
+                  <td>
+                    <a href='".$item['link']."'>          
+                    <div class='link_frame'>
+                      <img class='link_img' src='".$item['img']."'/>
+                    </div>
+                    </a>
+                  </td>
+                  <td class='link_text'>";
+      echo $item['org'];
+      echo "
+                  </td>
+                </tr></table>
+              </div>
+            <hr />";
+    }
     echo "
         </div>
     ";
-  }
-
 ?>
       </div>
 
@@ -155,7 +189,7 @@
 
       $(function(){
           //set selected
-          $(".research").addClass("selected");
+          $(".links").addClass("selected");
           $(".research_submit").click(function() {
             $(".research_form").submit();
           });

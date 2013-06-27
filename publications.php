@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <?php
 
-  if (isset($_POST['add']) && isset($_POST['title']) && isset($_POST['paragraph'])) {
+  if (isset($_POST['add']) && isset($_POST['reference'])) {
 
-    require_once('db_access/add_research.php');
+//    require_once('db_access/add_publication.php');
   }
 
-  if (isset($_POST['delete']) && isset($_POST['title'])) {
+  if (isset($_POST['delete']) && isset($_POST['reference'])) {
 
-    require_once('db_access/rm_research.php');
+//    require_once('db_access/rm_publication.php');
   }
 
-  require_once('db_access/get_research.php');
+//  require_once('db_access/get_publication.php');
 
 ?>
 <html lang="en">
@@ -32,6 +32,18 @@
     /* GLOBAL STYLES
     -------------------------------------------------- */
     /* Padding below the footer and lighter body text */
+    .info {
+
+      padding: 30px;
+      font-size: 18px;
+      line-height: 35px;
+    }
+
+    .about_img {
+
+      width: 1000px;
+
+    }
 
     </style>
 
@@ -62,20 +74,17 @@
 
       <div>
         <!-- Button to trigger modal -->
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#myModal" role="button" class="btn" data-toggle="modal">Add Article</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#myModal" role="button" class="btn" data-toggle="modal">Add Publication</a>
          
         <!-- Modal -->
         <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="myModalLabel">Add Article</h3>
+            <h3 id="myModalLabel">Add Publication</h3>
           </div>
           <div class="modal-body">
             <form class="research_form" method="post">
-              <input type="hidden" name="add" value="true" />
-              Title: &nbsp;&nbsp;&nbsp;<input class="input-taller" type="text" name="title"><br />
-              <br />
-              <textarea class="ckeditor" type="text" name="paragraph" cols="80" rows="15"></textarea>
+              <textarea class="ckeditor" type="text" name="publication" cols="80" rows="15"></textarea>
             </form>
           </div>
           <div class="modal-footer">
@@ -87,30 +96,65 @@
 <?php
 
     //result is the result of research returned from require_once("get_research.php")
-//    $row[0] = 'example title';
-//    $row[2] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et blandit tortor. Aliquam rutrum nisl pulvinar orci mattis, ac sodales lorem consectetur. Nulla facilisi. Aliquam vitae sapien nisi. Phasellus volutpat lectus vitae ornare scelerisque. Mauris eu quam ante. Donec vel tellus mi. Ut mattis tempus luctus. Nunc in nisl vitae turpis consectetur ornare eu nec sapien. Pellentesque ac odio leo. Etiam eleifend adipiscing ultrices. Sed facilisis imperdiet libero, a viverra lectus bibendum auctor. Curabitur sit amet nisl vitae nisi malesuada porttitor vitae vel nibh. ';
+    $row[0] = 'stuff <b> bold </b> and <u> underline </u>';
+    $row[1] = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et blandit tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et blandit tortor.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et blandit tortor.';
 
-  //for
-  while ($row = $result->fetch_row()) {
 
     echo " 
-        <div class='article icon_holder' table-id='1'>
-          <a class='edit_research'><span class='floating_icon_first edit_icon'></span></a> 
-          <a class='delete_research'><span class='floating_icon_second delete_icon'></span></a>
+        <div class='article' table-id='1'>
           <h3 class='header_title'> 
-    ";
-    echo $row[0];
-    echo "
+             Journal publications
           </h3>
           <div class='header_diag'>
           </div>
+            <ol>
     ";
-    //expects $row[2] to start with <p>
-    echo $row[2];
+    
+    //  while ($row = $result->fetch_row()) {
+    foreach ($row as $item) {
+
+      echo "<li>
+              <div class='icon_holder'>
+              <a class='edit_research'><span class='floating_icon_first publication_icon_size edit_icon'></span></a> 
+              <a class='delete_research'><span class='floating_icon_second publication_second_icon_size delete_icon'></span></a>";
+      echo $item;
+      echo "
+              </div>
+            </li>";
+    }
     echo "
+          </ol>
         </div>
     ";
-  }
+
+    //___Conference papers______________________________________
+
+    echo " 
+        <div class='article' table-id='1'>
+          <h3 class='header_title'> 
+             Conference papers
+          </h3>
+          <div class='header_diag'>
+          </div>
+            <ol>
+    ";
+    
+    //  while ($row = $result->fetch_row()) {
+    foreach ($row as $item) {
+
+      echo "<li>
+              <div class='icon_holder'>
+              <a class='edit_research'><span class='floating_icon_first publication_icon_size edit_icon'></span></a> 
+              <a class='delete_research'><span class='floating_icon_second publication_second_icon_size delete_icon'></span></a>";
+      echo $item;
+      echo "
+              </div>
+            </li>";
+    }
+    echo "
+          </ol>
+        </div>
+    ";
 
 ?>
       </div>
@@ -155,7 +199,7 @@
 
       $(function(){
           //set selected
-          $(".research").addClass("selected");
+          $(".publications").addClass("selected");
           $(".research_submit").click(function() {
             $(".research_form").submit();
           });

@@ -47,9 +47,7 @@
 
     .officer .profile {
       overflow: hidden;
-      width: 100px;
-      height: 100px;
-
+      width: 120px;
       transform: translate(-50px, 0px);
       -ms-transform: translate(-50px, 0px); /* IE 9 */
       -webkit-transform: translate(-50px, 0px); /* Safari and Chrome */
@@ -128,7 +126,9 @@
                 <b style="visibility:hidden">asdf</b> Faculty
               </td>
               <td>
-                <img class='profile cushycms' src="images/officers/clack.jpg">
+                <div class='people_frame'>
+                  <img class='people_img' src='images/officers/clack.jpg'/>
+                </div>
               </td>
             </tr>
             <tr>
@@ -147,7 +147,9 @@
                 PhD student
               </td>
               <td>
-                <img class='profile cushycms' src="images/officers/Solomon.jpg">
+                <div class='people_frame'>
+                  <img class='people_img' src='images/officers/Solomon.jpg'/>
+                </div>
               </td>
             </tr>
             <tr>
@@ -184,19 +186,19 @@
         <div id="member_table">
         </div>
         <div id="data" class="cushycms">
-          Former members, Contact, Link;
-          Dr. Kavin Ammigan,  ,  ;
-          Nekheel Gajjar, , ;
-          Dr. Tae-Hoon Jung, , ; 
-          Dr. Martin Linck [Post-doc], , ; 
-          A. A. Mohammed, , ; 
-          Uttam Narasimhan, , ; 
-          Peter Richard Bittner, , ; 
-          Pierre Coutris, , ; 
-          Violaine Todoroff, , ; 
-          Vinit Prabhu, , ; 
-          Brian Robbins, , ; 
-          Taehoon Kim, , ;
+          Former members, Phone, Email, Link;
+          Dr. Kavin Ammigan, , ,  ;
+          Nekheel Gajjar, ,, ;
+          Dr. Tae-Hoon Jung, ,, ; 
+          Dr. Martin Linck [Post-doc], ,, ; 
+          A. A. Mohammed, ,, ; 
+          Uttam Narasimhan, ,, ; 
+          Peter Richard Bittner, ,, ; 
+          Pierre Coutris, ,, ; 
+          Violaine Todoroff, ,, ; 
+          Vinit Prabhu, ,, ; 
+          Brian Robbins, ,, ; 
+          Taehoon Kim, ,, 
         </div>
       </div>
 
