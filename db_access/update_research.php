@@ -7,8 +7,8 @@ if ($db->connect_error) {
 	exit();
 }
 
-$new_title = $_POST['new_title'];
-$old_title = $_POST['old_title'];
+$new_title = $_POST['title'];
+$old_title = $_POST['edit'];
 
 if(strncmp($new_title, $old_title, 200))
 {
@@ -19,7 +19,7 @@ if(strncmp($new_title, $old_title, 200))
 	
 	if($stmt->execute() == false)
 	{
-		printf("Statement failed\n");
+		printf("Statement failed 22\n");
 		exit();
 	}
 	$result = $stmt->get_result();
@@ -35,7 +35,7 @@ if(strncmp($new_title, $old_title, 200))
 	$title = $old_title;
 	if($stmt->execute() == false)
 	{
-		printf("Statement failed\n");
+		printf("Statement failed 38\n");
 		exit();
 	}
 	$result = $stmt->get_result();
@@ -56,7 +56,7 @@ $paragraph = $_POST['paragraph'];
 
 if($stmt->execute() == false)
 {
-	printf("Statement failed\n");
+	printf("Statement failed 59\n");
 	exit();
 }
 

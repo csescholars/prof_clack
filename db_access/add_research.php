@@ -16,7 +16,7 @@ $paragraph = $_POST['paragraph'];
 
 if($stmt->execute() == false)
 {
-	printf("Statement failed\n");
+	printf("Add statement failed\n");
 	exit();
 }
 

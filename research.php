@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <?php
 
-  if (isset($_POST['add']) && isset($_POST['title']) && isset($_POST['paragraph'])) {
+  if (isset($_POST['add']) && $_POST['add'] != 'false' && isset($_POST['title']) && isset($_POST['paragraph'])) {
 
     require_once('db_access/add_research.php');
+  }
+
+  if (isset($_POST['edit']) && $_POST['edit'] != 'false' && isset($_POST['title']) && isset($_POST['paragraph'])) {
+
+    require_once('db_access/update_research.php');
   }
 
   if (isset($_POST['delete']) && isset($_POST['title'])) {
