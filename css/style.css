@@ -75,7 +75,7 @@ body {
     background: #091447;
 }
 
-.header_diag + p, .header_diag + ol {
+.header_diag + div p, .header_diag + ol {
 
 	padding-top: 15px;
 	padding-left: 30px;
@@ -94,8 +94,8 @@ body {
 
   display: inline-block;
   position: absolute;
-  right: 25px;
-  top: 22px;
+  right: 125px;
+  top: 0px;
   width: 35px;
   height: 35px;
   margin-top: 1px;
@@ -112,8 +112,8 @@ body {
 
   display: inline-block;
   position: absolute;
-  right: 60px;
-  top: 22px;
+  right: 160px;
+  top: 0px;
   width: 35px;
   height: 35px;
   margin-top: 1px;
@@ -142,6 +142,34 @@ body {
   background-size: 20px, 20px;
   line-height: 20px;
   height: 20px;
+}
+
+.people_icon_size {
+
+  top: 0px;
+  right: 30px;
+  background-size: 35px, 35px;
+  line-height: 35px;
+  height: 35px;
+}
+
+.people_second_icon_size {
+
+  top: 0px;
+  right: 0px;
+  background-size: 35px, 35px;
+  line-height: 35px;
+  height: 35px;
+}
+
+.research_image {
+
+  top: 0px;
+  right: 25px;
+  background-size: 100px, 100px;
+  line-height: 100px;
+  height: 100px;
+  width: 100px;
 }
 
 .edit_icon {

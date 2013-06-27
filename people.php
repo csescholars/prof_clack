@@ -128,6 +128,8 @@
               <td>
                 <div class='people_frame'>
                   <img class='people_img' src='images/officers/clack.jpg'/>
+                  <a class='edit_research'><span class='floating_icon_first people_icon_size edit_icon'></span></a> 
+                  <a class='delete_research'><span class='floating_icon_second people_second_icon_size delete_icon'></span></a>
                 </div>
               </td>
             </tr>

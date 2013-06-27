@@ -72,10 +72,13 @@
           </div>
           <div class="modal-body">
             <form class="research_form" method="post">
-              <input type="hidden" name="add" value="true" />
-              Title: &nbsp;&nbsp;&nbsp;<input class="input-taller" type="text" name="title"><br />
+              <input type="hidden" id="add" name="add" value="true" />
+              <input type="hidden" id="edit" name="edit" value="false" />
+              Title: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="input-taller" type="text" id="title" name="title"><br />
               <br />
-              <textarea class="ckeditor" type="text" name="paragraph" cols="80" rows="15"></textarea>
+              Image: &nbsp;&nbsp;<input class="input-taller" type="file" id="image" name="image"><br />
+              <br />
+              <textarea type="text" id="paragraph" name="paragraph" cols="80" rows="15"></textarea>
             </form>
           </div>
           <div class="modal-footer">
@@ -95,6 +98,7 @@
 
     echo " 
         <div class='article icon_holder' table-id='1'>
+          <img class='floating_icon_first research_image' src='".$row[1]."' />
           <a class='edit_research'><span class='floating_icon_first edit_icon'></span></a> 
           <a class='delete_research'><span class='floating_icon_second delete_icon'></span></a>
           <h3 class='header_title'> 
@@ -104,10 +108,12 @@
           </h3>
           <div class='header_diag'>
           </div>
+          <div class='research_paragraph'>
     ";
     //expects $row[2] to start with <p>
     echo $row[2];
     echo "
+          </div>
         </div>
     ";
   }
@@ -129,6 +135,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="ckeditor/adapters/jquery.js"></script>
     <script>
       function post_to_url(path, params) {
           method = "post"; // Set method to post by default if not specified.
@@ -152,8 +159,10 @@
           document.body.appendChild(form);
           form.submit();
       }
-
+      var editor;
       $(function(){
+
+          editor = CKEDITOR.replace( 'paragraph');
           //set selected
           $(".research").addClass("selected");
           $(".research_submit").click(function() {
@@ -164,6 +173,19 @@
 
             var title = $(this).next('.header_title').html().trim();
             post_to_url(window.location.href, {'delete':'true', 'title':title});
+          });
+          $(".edit_research").click(function() {
+
+            var title = $(this).nextAll('.header_title').first().html().trim();
+            var body = $(this).nextAll('.research_paragraph').first().html().trim();
+            var image = $(this).prevAll('.research_image').first().attr('src');
+            alert(title+":"+body+":"+image);
+            $('#myModal').modal('show');
+            $('#add').val(false);
+            $('#edit').val(title);
+            $('#title').val(title);
+            $('#image').val(image);
+            editor.setData(body);            
           });                      
       });
     </script>
